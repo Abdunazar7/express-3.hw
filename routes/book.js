@@ -30,7 +30,7 @@ route.get("/", async (req, res) => {
     }
 
     const books = await Book.find(filter)
-      .populate("author", "name", "price")
+      .populate("author", "name")
       .skip((page - 1) * take)
       .limit(take);
 
